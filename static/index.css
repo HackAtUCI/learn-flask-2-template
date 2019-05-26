@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+    
+}
+
+.button {
+    font-weight: 900;
+    background-color: white;
+    padding: 25px 50px 25px 50px;
+    margin: 10px;
+    border-radius: 25px 
+}
+
+.node {
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid grey;
+    border-radius: 25px;
+ }

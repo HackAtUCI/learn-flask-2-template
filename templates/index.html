@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" href="../static/index.css">
+        <script src="../scripts/script.js"></script>
+    </head>
+
+    <body>
+    
+        <div class="container">
+            
+            <!-- I could just make a form out of each button
+                Could just make a method post? -->
+            <div class="button">
+                <a href = "/add">ADD </a>
+            </div>    
+
+
+            
+        </div>
+    
+
+        <div class="container">
+            {% for info in info_list %}
+                <div class = "node"> 
+                    committee: <br>{{info['committee']}} <br>
+                    role: <br>{{info['role']}} <br>
+                    <!--description: {{info['description']}} <br> 
+                        Go through the items in each list?
+                        qualifications: {{info['qualifications']}}
+                        
+                    -->
+                    prompt: <br>
+                    {% for item in info['prompt'] %}
+                        {{item}}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+    </body>
+</html>
