@@ -6,33 +6,30 @@ uri = "mongodb+srv://dbUser:dbPassword@hack-roles-rvxnw.mongodb.net/test?retryWr
  
 app = Flask(__name__)
 
-
+# TO_DO(1): Choose which database to use
 db = MongoDB(uri)
 # proxy_db = DBProxy("roles.json")
 
 
 @app.route('/', methods = ["GET", "POST"])
 def index():   
+    # TO_DO(2): Preprocess qualifications and prompt into lists 
     processed_data = []
-    for item in db["roles-info"].find():
-        processed_data.append(item)
-
-    for item in processed_data:
-        item["qualifications"] = item["qualifications"][1:-1].split(",")
-        item["prompt"] = item["prompt"][1:-1].split(",")
+    # TO-DO(3): ONLY FOR DB: Append data into list from find(), 
+    #                        Go through each entry and slice ends off, split by ',', for qualifications and prompt fields
 
     # processed_data = proxy_db.items()
 
-    return render_template("index.html", info_list = processed_data)
+    # TO_DO(4): Render index with processed data and go into index.html and jinja2 template
+    
  
 @app.route('/add', methods = ["GET", "POST"])
 def add_entry(): 
-    if request.method == "POST":
-        db["roles-info"].insert_one(dict(request.form))
-        # proxy_db.create(dict(request.form))
-        return redirect(url_for("index"))
+    # TO_DO(6): Once method is POST, insert into db new data (as a dict) and redirect url for index
 
-    return render_template("add_entry.html")
+    # TO-DO(7): Render template for add_entry.html
+    
+    pass
 
 if __name__ == '__main__':  
     app.run(debug = True) 
