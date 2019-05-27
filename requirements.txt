@@ -1,3 +1,3 @@
 dnspython 
-pymongo
+pymongo==3.3.0
 flask
