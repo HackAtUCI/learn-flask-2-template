@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-            <link rel ="stylesheet" href="../static/add_entry.css">
-            <script src="../scripts/script.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel ="stylesheet" href="../static/add_entry.css">
+        <script src="../scripts/script.js"></script>
     </head>
-
     <body>
-        <h2>Enter the info for the new entry:</h2>
-
-        <form method="POST"> 
-            Committee: <br>
-            <input type="text" name="committee"> <br><br>
-            Role: <br>
-            <input type="text" name="role"> <br><br>
-            Description: <br>
-            <input type="text" name="description"> <br><br>
-            Qualifications: <br>
-            <input type="text" name="qualifications"> <br><br>
-            Prompt: <br>
-            <input type="text" name="prompt"> <br><br><br>
-
-            <input type="submit">
+        <h2 class="add-title">Add information for the role</h2>
+        <form class="add-form" method="POST">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Committee</label>
+                <input name="committee" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Role</label>
+                <input name="role" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Description</label>
+                <input name="description" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Qualifications</label>
+                <input name="qualifications" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Prompt</label>
+                <input name="prompt" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <button class="btn btn-primary">Submit</button>
         </form>
     </body>
-
 </html>

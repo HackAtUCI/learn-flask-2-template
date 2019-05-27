@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel ="stylesheet" href="../static/index.css">
-        <script src="../scripts/script.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel ="stylesheet" href="../static/index.css" />
     </head>
-
     <body>
-    
-        <div class="container">
-            
-            <!-- I could just make a form out of each button
-                Could just make a method post? -->
-            <div class="button">
-                <a href = "/add">ADD </a>
-            </div>    
-
-
-            
+        <div class="container full-width">
+            <a class="btn btn-primary add-btn" href = "/add">Add Role </a>  
         </div>
-    
-
         <div class="container">
             {% for info in info_list %}
-                <div class = "node"> 
-                    committee: <br>{{info['committee']}} <br>
-                    role: <br>{{info['role']}} <br>
-                    <!--description: {{info['description']}} <br> 
-                        Go through the items in each list?
-                        qualifications: {{info['qualifications']}}
-                        
-                    -->
-                    prompt: <br>
-                    {% for item in info['prompt'] %}
-                        {{item}}
-                    {% endfor %}
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title role-name">{{info['role']}}</h5>
+                    <p>{{info['committee']}} committee</p>
+                    <div class="card-text">
+                        <div>
+                            Description
+                        </div>
+                            <ul>
+                                {{info['description']}}
+                            </ul> 
+                        <div>
+                            Prompt
+                        </div>
+                        <ul>
+                            {% for item in info['prompt'] %}
+                                <li><a href="{{item.strip()[1:-1]}}">{{item.strip()[1:-1]}} </a></li>
+                            {% endfor %}
+                        </ul>        
+                        <div>
+                            Qualifications
+                        </div>
+                        <ul>
+                            {% for item in info['qualifications'] %}
+                                <li>{{item.strip()[1:-1]}}</li>
+                            {% endfor %}
+                        </ul> 
+                    </div>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
-
     </body>
 </html>
